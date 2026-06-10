@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kerupuk Rambak Adi — Asli Khas Boyolali. Renyah, gurih, digoreng dadakan dengan minyak segar. Pesan langsung via WhatsApp.">
+    <meta name="keywords" content="kerupuk rambak, boyolali, kerupuk kulit sapi, rambak adi, UMKM, camilan tradisional">
+    <meta name="author" content="Kerupuk Rambak Adi">
+    <title>Kerupuk Rambak Adi | Asli Khas Boyolali</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="assets/logo kerupuk rambak adi .png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="visual.css">
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="#beranda" class="navbar-brand">
+                <img src="assets/logo kerupuk rambak adi .png" alt="Logo Rambak Adi" class="navbar-brand-logo">
+                <span class="navbar-brand-text">Rambak Adi</span>
+            </a>
+            
+            <div class="navbar-links" id="navbar-links">
+                <a href="#beranda" class="navbar-link">Beranda</a>
+                <a href="#katalog" class="navbar-link">Katalog</a>
+                <a href="#ulasan" class="navbar-link">Ulasan</a>
+                <a href="#kontak" class="navbar-link">Kontak</a>
+            </div>
+            
+            <div style="display:flex;align-items:center;gap:8px;">
+                <button class="navbar-admin-btn" onclick="showAdminLogin()" title="Admin Panel" id="admin-trigger-btn" aria-label="Buka panel admin">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ========== HERO SECTION ========== -->
+    <header class="hero section" id="beranda">
+        <div class="container" style="display:flex;flex-direction:column;align-items:center;">
+            <img src="assets/logo kerupuk rambak adi .png" alt="Kerupuk Rambak Adi — Asli Khas Boyolali" class="hero-logo">
+            
+            <div class="hero-badge">
+                <span class="small-caps">UMKM Khas Daerah • Boyolali</span>
+            </div>
+            
+            <h1 class="hero-title">Kerupuk Rambak Adi</h1>
+            
+            <p class="hero-subtitle">
+                Renyah, gurih, dan digoreng dadakan dengan minyak segar. Kualitas premium asli khas Boyolali untuk lauk maupun camilan keluarga.
+            </p>
+            
+            <div class="hero-divider"></div>
+            
+            <div class="hero-actions">
+                <a href="#katalog" class="btn btn-primary" id="hero-cta-katalog">Lihat Katalog</a>
+                <a href="https://wa.me/6281316390543?text=Halo%20Kerupuk%20Rambak%20Adi%2C%20saya%20ingin%20bertanya%20tentang%20produk." target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="hero-cta-wa">Hubungi Kami</a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ========== KATALOG PRODUK ========== -->
+    <section class="section" id="katalog">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-header-line"></span>
+                <span class="small-caps">Katalog Produk</span>
+                <span class="section-header-line"></span>
+            </div>
+            
+            <div class="product-grid" id="product-grid">
+                <!-- Products rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== ULASAN PELANGGAN ========== -->
+    <section class="section" id="ulasan">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-header-line"></span>
+                <span class="small-caps">Ulasan Pelanggan</span>
+                <span class="section-header-line"></span>
+            </div>
+            
+            <!-- Rating Summary -->
+            <div class="review-summary fade-up" id="review-summary">
+                <div class="review-summary-score" id="review-avg-score">5.0</div>
+                <div class="review-summary-stars" id="review-avg-stars">★★★★★</div>
+                <div class="review-summary-count" id="review-count">6 ulasan</div>
+            </div>
+            
+            <div class="review-grid" id="review-grid">
+                <!-- Reviews rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer" id="kontak">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4 class="footer-title">Informasi Kontak</h4>
+                    <p class="footer-text">
+                        Jl. H. Tahir I Jl. Cikunir Raya No.142 A, RT.002/RW.002, Jakamulya, Kec. Bekasi Sel., Kota Bks, Jawa Barat 17146
+                    </p>
+                    <p class="footer-contact">
+                        Telepon: <a href="tel:+6281316390543">0813-1639-0543</a>
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Jam Operasional</h4>
+                    <ul>
+                        <li class="footer-hours-item">
+                            <span>Senin — Minggu</span>
+                            <span>08.00 — 21.00</span>
+                        </li>
+                    </ul>
+                    <p class="footer-hours-note">*Waktu tersibuk biasanya pada hari Rabu pukul 12 siang.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kerupuk Rambak Adi — Asli Khas Boyolali. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ========== FLOATING WHATSAPP BUTTON ========== -->
+    <a href="https://wa.me/6281316390543?text=Halo%20Kerupuk%20Rambak%20Adi%2C%20saya%20ingin%20bertanya." target="_blank" rel="noopener noreferrer" class="wa-float" id="wa-float-btn" aria-label="Chat WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+
+    <!-- ========== TOAST NOTIFICATION ========== -->
+    <div class="toast" id="toast"></div>
+
+
+    <!-- ========== ADMIN LOGIN MODAL ========== -->
+    <div class="modal-overlay" id="login-overlay">
+        <div class="modal modal-login">
+            <div class="modal-login-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+            </div>
+            <h3 class="modal-login-title">Panel Admin</h3>
+            <p class="modal-login-subtitle">Masukkan password untuk mengelola produk & ulasan.</p>
+            
+            <div class="form-group">
+                <div class="password-wrapper">
+                    <input type="password" id="admin-password" class="form-input" placeholder="Masukkan password..." autocomplete="off">
+                </div>
+                <p class="form-error" id="login-error"></p>
+            </div>
+            
+            <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px;">
+                <button class="btn btn-primary btn-block" onclick="attemptLogin()" id="login-submit-btn">Masuk</button>
+                <button class="btn btn-outline btn-block" onclick="hideAdminLogin()" style="border-color:var(--border);color:var(--text-secondary);">Batal</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ========== ADMIN PANEL MODAL ========== -->
+    <div class="modal-overlay" id="admin-overlay">
+        <div class="modal modal-admin">
+            <!-- Header -->
+            <div class="modal-header">
+                <h3 class="modal-header-title">Panel Admin</h3>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <button class="btn btn-sm btn-outline" onclick="logoutAdmin()" style="border-color:var(--danger);color:var(--danger);font-size:0.8rem;">Keluar</button>
+                    <button class="modal-close" onclick="hideAdminPanel()" aria-label="Tutup">✕</button>
+                </div>
+            </div>
+            
+            <!-- Body -->
+            <div class="modal-body">
+                <!-- Tabs -->
+                <div class="admin-tabs">
+                    <button class="admin-tab active" data-tab="products">Kelola Produk</button>
+                    <button class="admin-tab" data-tab="reviews">Kelola Ulasan</button>
+                </div>
+                
+                <!-- ===== TAB: Products ===== -->
+                <div class="admin-tab-content active" id="tab-products">
+                    <h4 style="font-family:var(--font-serif);font-size:1.1rem;margin-bottom:20px;" id="product-form-title">Tambah Produk Baru</h4>
+                    
+                    <form id="product-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="product-name">Nama Produk</label>
+                                <input type="text" id="product-name" class="form-input" placeholder="cth: Kemasan Plastik 1 KG" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="product-price">Harga (Rp)</label>
+                                <input type="number" id="product-price" class="form-input" placeholder="cth: 25000" required min="0">
+                                <p class="form-hint">Masukkan angka saja tanpa titik</p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="product-desc">Deskripsi</label>
+                            <textarea id="product-desc" class="form-textarea" placeholder="Deskripsi singkat produk..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Foto Produk</label>
+                            <div class="form-file-wrapper">
+                                <div class="form-file-preview" id="product-image-preview" onclick="document.getElementById('product-image-input').click()">
+                                    <span class="form-file-preview-placeholder">+ Foto</span>
+                                </div>
+                                <input type="file" id="product-image-input" class="form-file-input" accept="image/*" onchange="handleProductImageUpload(this)">
+                                <p class="form-hint">Format: JPG, PNG, WebP. Maks 2MB.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="product-submit-btn">Tambah Produk</button>
+                            <button type="button" class="btn btn-outline" id="product-cancel-btn" style="display:none;" onclick="resetProductForm()">Batal</button>
+                        </div>
+                    </form>
+                    
+                    <!-- Product List -->
+                    <div class="admin-list">
+                        <h5 class="admin-list-title">Daftar Produk</h5>
+                        <div id="admin-product-list">
+                            <!-- Rendered by JS -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== TAB: Reviews ===== -->
+                <div class="admin-tab-content" id="tab-reviews">
+                    <h4 style="font-family:var(--font-serif);font-size:1.1rem;margin-bottom:20px;" id="review-form-title">Tambah Ulasan</h4>
+                    
+                    <form id="review-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="review-name">Nama Pelanggan</label>
+                                <input type="text" id="review-name" class="form-input" placeholder="cth: Ahmad Fauzi" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Rating</label>
+                                <div class="star-rating-input">
+                                    <input type="radio" name="rating" value="5" id="star-5" checked>
+                                    <label for="star-5" title="5 bintang">★</label>
+                                    <input type="radio" name="rating" value="4" id="star-4">
+                                    <label for="star-4" title="4 bintang">★</label>
+                                    <input type="radio" name="rating" value="3" id="star-3">
+                                    <label for="star-3" title="3 bintang">★</label>
+                                    <input type="radio" name="rating" value="2" id="star-2">
+                                    <label for="star-2" title="2 bintang">★</label>
+                                    <input type="radio" name="rating" value="1" id="star-1">
+                                    <label for="star-1" title="1 bintang">★</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="review-text">Isi Ulasan</label>
+                            <textarea id="review-text" class="form-textarea" placeholder="Tulis ulasan pelanggan..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Foto (Opsional)</label>
+                            <div class="form-file-wrapper">
+                                <div class="form-file-preview" id="review-image-preview" onclick="document.getElementById('review-image-input').click()">
+                                    <span class="form-file-preview-placeholder">+ Foto</span>
+                                </div>
+                                <input type="file" id="review-image-input" class="form-file-input" accept="image/*" onchange="handleReviewImageUpload(this)">
+                                <p class="form-hint">Format: JPG, PNG, WebP. Maks 2MB.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="review-submit-btn">Tambah Ulasan</button>
+                            <button type="button" class="btn btn-outline" id="review-cancel-btn" style="display:none;" onclick="resetReviewForm()">Batal</button>
+                        </div>
+                    </form>
+                    
+                    <!-- Review List -->
+                    <div class="admin-list">
+                        <h5 class="admin-list-title">Daftar Ulasan</h5>
+                        <div id="admin-review-list">
+                            <!-- Rendered by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ========== CONFIRM DIALOG ========== -->
+    <div class="confirm-overlay" id="confirm-overlay">
+        <div class="confirm-dialog">
+            <h4 class="confirm-title" id="confirm-title">Konfirmasi</h4>
+            <p class="confirm-text" id="confirm-text">Apakah Anda yakin?</p>
+            <div class="confirm-actions">
+                <button class="btn btn-outline btn-sm" onclick="hideConfirm()">Batal</button>
+                <button class="btn btn-danger btn-sm" onclick="handleConfirm()">Ya, Hapus</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="komponen.js"></script>
+
+</body>
+</html>
