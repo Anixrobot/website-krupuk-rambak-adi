@@ -53,6 +53,47 @@
             color: #4A3219;
             background-color: #F8F4EA;
         }
+        /* Mobile menu styles */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        .mobile-menu.open {
+            max-height: 300px;
+            opacity: 1;
+        }
+        /* Floating WA button */
+        .wa-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+        .wa-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+        }
+        @media (max-width: 768px) {
+            .wa-float {
+                bottom: 16px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+            }
+        }
     </style>
 </head>
 <body class="antialiased batik-pattern">
@@ -60,16 +101,16 @@
     <!-- Navigation (Layer Atas Warna Golden) -->
     <nav class="sticky top-0 z-50 bg-brand-nav shadow-lg border-b border-white/20">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+            <div class="flex justify-between items-center h-16 md:h-20">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
-                    <img src="assets/logo kerupuk rambak adi .png" alt="Logo Rambak Adi" class="w-16 h-16 object-contain drop-shadow-sm">
+                <div class="flex-shrink-0 flex items-center gap-2 md:gap-3 cursor-pointer">
+                    <img src="assets/logo kerupuk rambak adi .png" alt="Logo Rambak Adi" class="w-10 h-10 md:w-16 md:h-16 object-contain drop-shadow-sm">
                     <div>
-                        <h1 class="font-serif font-bold text-xl text-white leading-none">Rambak Adi</h1>
-                        <span class="text-[10px] uppercase tracking-widest text-white/80 font-semibold">Asli Boyolali</span>
+                        <h1 class="font-serif font-bold text-base md:text-xl text-white leading-none">Rambak Adi</h1>
+                        <span class="text-[9px] md:text-[10px] uppercase tracking-widest text-white/80 font-semibold">Asli Boyolali</span>
                     </div>
                 </div>
-                <!-- Menu -->
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8">
                     <a href="#beranda" class="text-sm font-medium text-white/90 hover:text-white transition-colors">Beranda</a>
                     <a href="#katalog" class="text-sm font-medium text-white/90 hover:text-white transition-colors">Katalog Produk</a>
@@ -78,28 +119,37 @@
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button class="text-white hover:text-white/80">
-                        <i class="ph ph-list text-2xl"></i>
+                    <button id="mobile-menu-btn" class="text-white hover:text-white/80 p-2" aria-label="Menu">
+                        <i class="ph ph-list text-2xl" id="menu-icon"></i>
                     </button>
                 </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-brand-nav border-t border-white/10">
+            <div class="px-4 py-3 space-y-1">
+                <a href="#beranda" class="mobile-link block py-3 px-4 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors">Beranda</a>
+                <a href="#katalog" class="mobile-link block py-3 px-4 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors">Katalog Produk</a>
+                <a href="#ulasan" class="mobile-link block py-3 px-4 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors">Ulasan</a>
+                <a href="#kontak" class="mobile-link block py-3 px-4 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors">Kontak</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="beranda" class="pt-24 pb-32 px-4 relative overflow-hidden">
+    <section id="beranda" class="pt-12 pb-16 md:pt-24 md:pb-32 px-4 relative overflow-hidden">
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <img src="assets/logo kerupuk rambak adi .png" alt="Logo Kerupuk Rambak Adi" class="h-48 md:h-64 w-auto object-contain mx-auto mb-6 drop-shadow-lg hover:scale-105 transition-transform duration-300">
-            <span class="inline-block py-1.5 px-6 rounded-full bg-gradient-to-b from-[#b58635] to-[#8c5f15] text-white text-[11px] sm:text-xs font-bold tracking-widest uppercase mb-6 shadow-[0_4px_10px_rgba(152,106,29,0.4)] border border-white/30" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+            <img src="assets/logo kerupuk rambak adi .png" alt="Logo Kerupuk Rambak Adi" class="h-32 md:h-48 lg:h-64 w-auto object-contain mx-auto mb-4 md:mb-6 drop-shadow-lg hover:scale-105 transition-transform duration-300">
+            <span class="inline-block py-1.5 px-4 md:px-6 rounded-full bg-gradient-to-b from-[#b58635] to-[#8c5f15] text-white text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-4 md:mb-6 shadow-[0_4px_10px_rgba(152,106,29,0.4)] border border-white/30" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
                 UMKM Khas Daerah • Boyolali
             </span>
-            <h2 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-brand-dark mb-6 leading-tight drop-shadow-sm">
+            <h2 class="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-brand-dark mb-4 md:mb-6 leading-tight drop-shadow-sm">
                 Kerupuk Rambak Adi
             </h2>
-            <p class="text-lg md:text-xl text-brand-brown/90 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+            <p class="text-base md:text-xl text-brand-brown/90 mb-8 md:mb-10 max-w-2xl mx-auto font-light leading-relaxed px-2">
                 Renyah, gurih, dan digoreng dadakan dengan minyak segar. Kualitas premium asli khas Boyolali, sangat cocok untuk lauk makan maupun camilan santai keluarga.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 px-4 sm:px-0">
                 <a href="#katalog" class="px-8 py-3.5 bg-gradient-to-r from-brand-nav to-brand-golddark text-white font-medium rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 border border-brand-gold/50">
                     Lihat Katalog
                 </a>
@@ -117,32 +167,32 @@
     </div>
 
     <!-- Katalog Produk (Background Putih) -->
-    <section id="katalog" class="py-24 px-4 bg-white/70 backdrop-blur-md border-y border-brand-gold/20">
+    <section id="katalog" class="py-12 md:py-24 px-4 bg-white/70 backdrop-blur-md border-y border-brand-gold/20">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h3 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark mb-4">Katalog Produk</h3>
-                <p class="text-brand-brown/70 max-w-xl mx-auto">Pilih kemasan yang sesuai dengan kebutuhan Anda. Digoreng dan dikemas dengan higienis.</p>
+            <div class="text-center mb-10 md:mb-16">
+                <h3 class="font-serif text-2xl md:text-4xl font-bold text-brand-dark mb-3 md:mb-4">Katalog Produk</h3>
+                <p class="text-sm md:text-base text-brand-brown/70 max-w-xl mx-auto px-2">Pilih kemasan yang sesuai dengan kebutuhan Anda. Digoreng dan dikemas dengan higienis.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto" id="product-grid">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 max-w-4xl mx-auto" id="product-grid">
                 <!-- Products rendered by JS -->
             </div>
         </div>
     </section>
 
     <!-- Ulasan Pelanggan (Background Krem Soft) -->
-    <section id="ulasan" class="py-24 px-4 bg-transparent">
+    <section id="ulasan" class="py-12 md:py-24 px-4 bg-transparent">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16" id="review-summary">
-                <div class="inline-flex items-center justify-center gap-2 mb-4" id="review-avg-stars">
+            <div class="text-center mb-10 md:mb-16" id="review-summary">
+                <div class="inline-flex items-center justify-center gap-1 md:gap-2 mb-3 md:mb-4" id="review-avg-stars">
                     <!-- Stars will be injected by JS -->
                 </div>
-                <h3 class="font-serif text-4xl md:text-5xl font-bold text-brand-dark mb-2" id="review-avg-score">-.-</h3>
-                <p class="text-brand-brown/70 uppercase tracking-widest text-sm font-semibold" id="review-count">Memuat Ulasan...</p>
+                <h3 class="font-serif text-3xl md:text-5xl font-bold text-brand-dark mb-2" id="review-avg-score">-.-</h3>
+                <p class="text-brand-brown/70 uppercase tracking-widest text-xs md:text-sm font-semibold" id="review-count">Memuat Ulasan...</p>
             </div>
 
-            <!-- Review Masonry Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="review-grid">
+            <!-- Review Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6" id="review-grid">
                 <!-- Reviews rendered by JS -->
             </div>
         </div>
@@ -225,6 +275,39 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281316390543" target="_blank" class="wa-float" aria-label="Chat WhatsApp">
+        <i class="ph-fill ph-whatsapp-logo text-2xl"></i>
+    </a>
+
     <script src="komponen.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+                if (mobileMenu.classList.contains('open')) {
+                    menuIcon.classList.remove('ph-list');
+                    menuIcon.classList.add('ph-x');
+                } else {
+                    menuIcon.classList.remove('ph-x');
+                    menuIcon.classList.add('ph-list');
+                }
+            });
+            // Close menu when clicking a link
+            mobileMenu.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                    menuIcon.classList.remove('ph-x');
+                    menuIcon.classList.add('ph-list');
+                });
+            });
+        }
+    </script>
 </body>
 </html>

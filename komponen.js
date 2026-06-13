@@ -267,23 +267,23 @@ function renderProducts() {
     }
     
     container.innerHTML = productsData.map(product => `
-        <div class="bg-brand-bg rounded-2xl overflow-hidden border border-brand-gold/20 hover:shadow-xl transition-shadow duration-300 group fade-up" id="card-${product.id}">
-            <div class="h-64 overflow-hidden relative">
+        <div class="bg-brand-bg rounded-xl md:rounded-2xl overflow-hidden border border-brand-gold/20 hover:shadow-xl transition-shadow duration-300 group fade-up" id="card-${product.id}">
+            <div class="h-48 md:h-64 overflow-hidden relative">
                 <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=800&auto=format&fit=crop'">
-                ${(product.id === 'p1' || product.id === 'p6') ? `<div class="absolute top-4 right-4 bg-brand-nav backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-white shadow-sm">Best Seller</div>` : ''}
+                ${(product.id === 'p1' || product.id === 'p6') ? `<div class="absolute top-3 right-3 md:top-4 md:right-4 bg-brand-nav backdrop-blur px-2.5 py-0.5 md:px-3 md:py-1 rounded-full text-[10px] md:text-xs font-bold text-white shadow-sm">Best Seller</div>` : ''}
             </div>
-            <div class="p-8">
-                <h4 class="font-serif text-2xl font-bold text-brand-dark mb-2">${escapeHtml(product.name)}</h4>
-                <p class="text-sm text-brand-brown/80 mb-6 min-h-[40px]">${escapeHtml(product.description)}</p>
+            <div class="p-5 md:p-8">
+                <h4 class="font-serif text-lg md:text-2xl font-bold text-brand-dark mb-1 md:mb-2">${escapeHtml(product.name)}</h4>
+                <p class="text-xs md:text-sm text-brand-brown/80 mb-4 md:mb-6 min-h-[36px] md:min-h-[40px]">${escapeHtml(product.description)}</p>
                 
-                <div class="flex items-end justify-between mb-6">
+                <div class="flex items-end justify-between mb-4 md:mb-6">
                     <div>
-                        <span class="text-xs text-brand-nav uppercase tracking-wider font-semibold block mb-1">Harga</span>
-                        <span class="text-2xl font-bold text-brand-dark">${escapeHtml(product.price)}</span>
+                        <span class="text-[10px] md:text-xs text-brand-nav uppercase tracking-wider font-semibold block mb-0.5 md:mb-1">Harga</span>
+                        <span class="text-xl md:text-2xl font-bold text-brand-dark">${escapeHtml(product.price)}</span>
                     </div>
                 </div>
 
-                <a href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Halo Kerupuk Rambak Adi, saya mau pesan ' + product.name)}" target="_blank" class="w-full block text-center py-3 bg-brand-green text-white font-medium rounded-lg hover:bg-brand-greenhover transition-colors shadow-md shadow-brand-green/20">
+                <a href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Halo Kerupuk Rambak Adi, saya mau pesan ' + product.name)}" target="_blank" class="w-full block text-center py-2.5 md:py-3 bg-brand-green text-white text-sm md:text-base font-medium rounded-lg hover:bg-brand-greenhover transition-colors shadow-md shadow-brand-green/20">
                     <i class="ph ph-whatsapp-logo mr-1"></i> Pesan via WhatsApp
                 </a>
             </div>
@@ -323,16 +323,16 @@ function renderReviews() {
     }
     
     container.innerHTML = reviewsData.map(review => `
-        <div class="bg-white p-6 rounded-xl shadow-md border-b-4 border-brand-gold relative fade-up">
-            <i class="ph-fill ph-quotes text-4xl text-brand-gold/10 absolute top-4 right-4"></i>
-            <p class="text-brand-brown/90 text-sm leading-relaxed mb-6 relative z-10">
+        <div class="bg-white p-4 md:p-6 rounded-lg md:rounded-xl shadow-md border-b-4 border-brand-gold relative fade-up">
+            <i class="ph-fill ph-quotes text-3xl md:text-4xl text-brand-gold/10 absolute top-3 right-3 md:top-4 md:right-4"></i>
+            <p class="text-brand-brown/90 text-xs md:text-sm leading-relaxed mb-4 md:mb-6 relative z-10">
                 "${escapeHtml(review.text)}"
             </p>
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-brand-nav text-white flex items-center justify-center font-bold">${getInitial(review.name)}</div>
+            <div class="flex items-center gap-2 md:gap-3">
+                <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-brand-nav text-white flex items-center justify-center font-bold text-xs md:text-base">${getInitial(review.name)}</div>
                 <div>
-                    <h5 class="font-bold text-brand-dark text-sm">${escapeHtml(review.name)}</h5>
-                    <div class="flex text-brand-gold text-xs">
+                    <h5 class="font-bold text-brand-dark text-xs md:text-sm">${escapeHtml(review.name)}</h5>
+                    <div class="flex text-brand-gold text-[10px] md:text-xs">
                         ${getStars(review.rating)}
                     </div>
                 </div>
