@@ -1,171 +1,230 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kerupuk Rambak Adi — Asli Khas Boyolali. Renyah, gurih, digoreng dadakan dengan minyak segar. Pesan langsung via WhatsApp.">
-    <meta name="keywords" content="kerupuk rambak, boyolali, kerupuk kulit sapi, rambak adi, UMKM, camilan tradisional">
-    <meta name="author" content="Kerupuk Rambak Adi">
-    <title>Kerupuk Rambak Adi | Asli Khas Boyolali</title>
+    <title>Kerupuk Rambak Adi - Asli Boyolali</title>
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="assets/logo kerupuk rambak adi .png">
+    <!-- Link to previous CSS for animations -->
+    <link rel="stylesheet" href="visual.css">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
-    <!-- Styles -->
-    <link rel="stylesheet" href="visual.css?v=6">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            nav: '#986A1D',     // Warna Golden/Bronze mewah sesuai gambar
+                            bg: '#F8F4EA',      // Warna latar krem antik
+                            gold: '#986A1D',    // Warna emas batik
+                            golddark: '#7A5212',// Warna emas gelap untuk hover
+                            brown: '#4A3219',   // Warna coklat khas batik Sogan
+                            dark: '#2A1608',    // Warna coklat super gelap nan mewah
+                            green: '#25D366',   // Warna WhatsApp
+                            greenhover: '#1EBE5A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Pattern Batik Kawung yang sangat halus dan mewah */
+        .batik-pattern {
+            background-color: #F8F4EA;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0C13.431 0 0 13.431 0 30c16.569 0 30-13.431 30-30zm0 60c16.569 0 30-13.431 30-30-16.569 0-30 13.431-30 30zM0 30c0 16.569 13.431 30 30 30C13.431 30 0 16.569 0 30zm60 0c0-16.569-13.431-30-30-30 16.569 0 30 13.431 30 30z' fill='%23986A1D' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            background-size: 40px;
+        }
+        body {
+            color: #4A3219;
+            background-color: #F8F4EA;
+        }
+    </style>
 </head>
-<body>
+<body class="antialiased batik-pattern">
 
-    <!-- ========== NAVBAR ========== -->
-    <nav class="navbar" id="navbar">
-        <div class="navbar-inner">
-            <a href="#beranda" class="navbar-brand">
-                <img src="assets/logo kerupuk rambak adi .png" alt="Logo Rambak Adi" class="navbar-brand-logo">
-                <span class="navbar-brand-text">Rambak Adi</span>
-            </a>
-            
-            <div class="navbar-links" id="navbar-links">
-                <a href="#beranda" class="navbar-link">Beranda</a>
-                <a href="#katalog" class="navbar-link">Katalog</a>
-                <a href="#ulasan" class="navbar-link">Ulasan</a>
-                <a href="#kontak" class="navbar-link">Kontak</a>
-            </div>
-            
-            <div style="display:flex;align-items:center;gap:8px;">
-                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+    <!-- Navigation (Layer Atas Warna Golden) -->
+    <nav class="sticky top-0 z-50 bg-brand-nav shadow-lg border-b border-white/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                    <img src="assets/logo kerupuk rambak adi .png" alt="Logo Rambak Adi" class="w-16 h-16 object-contain drop-shadow-sm">
+                    <div>
+                        <h1 class="font-serif font-bold text-xl text-white leading-none">Rambak Adi</h1>
+                        <span class="text-[10px] uppercase tracking-widest text-white/80 font-semibold">Asli Boyolali</span>
+                    </div>
+                </div>
+                <!-- Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#beranda" class="text-sm font-medium text-white/90 hover:text-white transition-colors">Beranda</a>
+                    <a href="#katalog" class="text-sm font-medium text-white/90 hover:text-white transition-colors">Katalog Produk</a>
+                    <a href="#ulasan" class="text-sm font-medium text-white/90 hover:text-white transition-colors">Ulasan</a>
+                    <a href="#kontak" class="text-sm font-medium text-white/90 hover:text-white transition-colors">Kontak</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-white hover:text-white/80">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
-
-    <!-- ========== HERO SECTION ========== -->
-    <header class="hero section" id="beranda">
-        <div class="container" style="display:flex;flex-direction:column;align-items:center;">
-            <img src="assets/logo kerupuk rambak adi .png" alt="Kerupuk Rambak Adi — Asli Khas Boyolali" class="hero-logo">
-            
-            <div class="hero-badge">
-                <span class="small-caps">UMKM Khas Daerah • Boyolali</span>
-            </div>
-            
-            <h1 class="hero-title">Kerupuk Rambak Adi</h1>
-            
-            <p class="hero-subtitle">
-                Renyah, gurih, dan digoreng dadakan dengan minyak segar. Kualitas premium asli khas Boyolali untuk lauk maupun camilan keluarga.
+    <!-- Hero Section -->
+    <section id="beranda" class="pt-24 pb-32 px-4 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <img src="assets/logo kerupuk rambak adi .png" alt="Logo Kerupuk Rambak Adi" class="h-48 md:h-64 w-auto object-contain mx-auto mb-6 drop-shadow-lg hover:scale-105 transition-transform duration-300">
+            <span class="inline-block py-1.5 px-6 rounded-full bg-gradient-to-b from-[#b58635] to-[#8c5f15] text-white text-[11px] sm:text-xs font-bold tracking-widest uppercase mb-6 shadow-[0_4px_10px_rgba(152,106,29,0.4)] border border-white/30" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+                UMKM Khas Daerah • Boyolali
+            </span>
+            <h2 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-brand-dark mb-6 leading-tight drop-shadow-sm">
+                Kerupuk Rambak Adi
+            </h2>
+            <p class="text-lg md:text-xl text-brand-brown/90 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                Renyah, gurih, dan digoreng dadakan dengan minyak segar. Kualitas premium asli khas Boyolali, sangat cocok untuk lauk makan maupun camilan santai keluarga.
             </p>
-            
-            <div class="hero-divider"></div>
-            
-            <div class="hero-actions">
-                <a href="#katalog" class="btn btn-primary" id="hero-cta-katalog">Lihat Katalog</a>
-                <a href="https://wa.me/6281316390543?text=Halo%20Kerupuk%20Rambak%20Adi%2C%20saya%20ingin%20bertanya%20tentang%20produk." target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="hero-cta-wa">Hubungi Kami</a>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#katalog" class="px-8 py-3.5 bg-gradient-to-r from-brand-nav to-brand-golddark text-white font-medium rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 border border-brand-gold/50">
+                    Lihat Katalog
+                </a>
+                <a href="https://wa.me/6281316390543" target="_blank" class="px-8 py-3.5 bg-white border-2 border-brand-nav text-brand-nav font-bold rounded-lg shadow-sm hover:bg-brand-nav hover:text-white transition-all duration-300 flex items-center justify-center gap-2 group">
+                    <i class="ph-fill ph-whatsapp-logo text-xl text-brand-green group-hover:text-white transition-colors"></i>
+                    Hubungi Kami
+                </a>
             </div>
         </div>
-    </header>
+    </section>
 
+    <!-- Section Divider -->
+    <div class="w-full flex justify-center -mt-8 relative z-20">
+        <div class="w-16 h-1 bg-brand-nav rounded-full shadow-md"></div>
+    </div>
 
-    <!-- ========== KATALOG PRODUK ========== -->
-    <section class="section" id="katalog">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-header-line"></span>
-                <span class="small-caps">Katalog Produk</span>
-                <span class="section-header-line"></span>
+    <!-- Katalog Produk (Background Putih) -->
+    <section id="katalog" class="py-24 px-4 bg-white/70 backdrop-blur-md border-y border-brand-gold/20">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h3 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark mb-4">Katalog Produk</h3>
+                <p class="text-brand-brown/70 max-w-xl mx-auto">Pilih kemasan yang sesuai dengan kebutuhan Anda. Digoreng dan dikemas dengan higienis.</p>
             </div>
-            
-            <div class="product-grid" id="product-grid">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto" id="product-grid">
                 <!-- Products rendered by JS -->
             </div>
         </div>
     </section>
 
+    <!-- Ulasan Pelanggan (Background Krem Soft) -->
+    <section id="ulasan" class="py-24 px-4 bg-transparent">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16" id="review-summary">
+                <div class="inline-flex items-center justify-center gap-2 mb-4" id="review-avg-stars">
+                    <!-- Stars will be injected by JS -->
+                </div>
+                <h3 class="font-serif text-4xl md:text-5xl font-bold text-brand-dark mb-2" id="review-avg-score">-.-</h3>
+                <p class="text-brand-brown/70 uppercase tracking-widest text-sm font-semibold" id="review-count">Memuat Ulasan...</p>
+            </div>
 
-    <!-- ========== ULASAN PELANGGAN ========== -->
-    <section class="section" id="ulasan">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-header-line"></span>
-                <span class="small-caps">Ulasan Pelanggan</span>
-                <span class="section-header-line"></span>
-            </div>
-            
-            <!-- Rating Summary -->
-            <div class="review-summary fade-up" id="review-summary">
-                <div class="review-summary-score" id="review-avg-score">5.0</div>
-                <div class="review-summary-stars" id="review-avg-stars">★★★★★</div>
-                <div class="review-summary-count" id="review-count">6 ulasan</div>
-            </div>
-            
-            <div class="review-grid" id="review-grid">
+            <!-- Review Masonry Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="review-grid">
                 <!-- Reviews rendered by JS -->
             </div>
         </div>
     </section>
 
+    <!-- Footer / Kontak -->
+    <footer id="kontak" class="bg-gradient-to-b from-brand-dark to-[#1a0e05] text-white/90 pt-20 pb-10 border-t-8 border-brand-nav relative overflow-hidden">
+        <!-- Dekorasi Batik di Footer -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0C13.431 0 0 13.431 0 30c16.569 0 30-13.431 30-30zm0 60c16.569 0 30-13.431 30-30-16.569 0-30 13.431-30 30zM0 30c0 16.569 13.431 30 30 30C13.431 30 0 16.569 0 30zm60 0c0-16.569-13.431-30-30-30 16.569 0 30 13.431 30 30z\' fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"></div>
 
-    <!-- ========== FOOTER ========== -->
-    <footer class="site-footer" id="kontak">
-        <div class="container">
-            <div class="footer-grid">
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                
+                <!-- Brand & Contact -->
                 <div>
-                    <h4 class="footer-title">Informasi Kontak</h4>
-                    <p class="footer-text">
-                        Jl. H. Tahir I Jl. Cikunir Raya No.142 A, RT.002/RW.002, Jakamulya, Kec. Bekasi Sel., Kota Bks, Jawa Barat 17146
+                    <h3 class="font-serif text-2xl font-bold text-brand-nav mb-6 flex items-center gap-3">
+                        <img src="assets/logo kerupuk rambak adi .png" alt="Logo" class="w-20 h-20 object-contain drop-shadow-sm">
+                        Rambak Adi
+                    </h3>
+                    <p class="text-sm text-white/70 mb-6 leading-relaxed">
+                        Pusat kerupuk rambak asli khas Boyolali. Kami menyajikan kualitas premium dengan proses penggorengan dadakan untuk menjaga kerenyahan maksimal.
                     </p>
-                    <p class="footer-contact">
-                        Telepon: <a href="tel:+6281316390543">0813-1639-0543</a>
-                    </p>
+                    <div class="space-y-4 text-sm">
+                        <div class="flex items-start gap-3">
+                            <i class="ph-fill ph-map-pin text-brand-nav text-xl mt-0.5"></i>
+                            <p>Jl. H. Tahir I, Jl. Cikunir Raya No.142 A,<br>RT.002/RW.002, Jakamulya,<br>Kec. Bekasi Sel., Kota Bks,<br>Jawa Barat 17146</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="ph-fill ph-phone text-brand-nav text-xl"></i>
+                            <p>0813-1639-0543</p>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Jam Operasional -->
                 <div>
-                    <h4 class="footer-title">Jam Operasional</h4>
-                    <ul>
-                        <li class="footer-hours-item">
-                            <span>Senin — Minggu</span>
-                            <span>08.00 — 21.00</span>
-                        </li>
-                    </ul>
-                    <p class="footer-hours-note">*Waktu tersibuk biasanya pada hari Rabu pukul 12 siang.</p>
+                    <h4 class="font-serif text-xl font-semibold text-white mb-6">Jam Operasional</h4>
+                    <div class="bg-white/5 p-6 rounded-xl border border-brand-nav/30">
+                        <div class="flex justify-between items-center mb-3 pb-3 border-b border-white/10">
+                            <span class="font-medium">Senin - Minggu</span>
+                            <span class="text-brand-nav font-bold">08.00 - 21.00</span>
+                        </div>
+                        <p class="text-xs text-brand-nav/90 italic flex items-start gap-2 mt-4">
+                            <i class="ph-fill ph-info text-base"></i>
+                            Waktu tersibuk biasanya pada hari Rabu pukul 12 siang.
+                        </p>
+                    </div>
                 </div>
+
+                <!-- Map -->
+                <div>
+                    <h4 class="font-serif text-xl font-semibold text-white mb-6">Lokasi Kami</h4>
+                    <div class="rounded-xl overflow-hidden border border-brand-nav/30 shadow-lg h-48 bg-white/5 relative group">
+                        <!-- Replace src with your actual Google Maps embed URL -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.023245465943!2d106.963456!3d-6.2606551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d000b2dc5f7%3A0xc3c907a4a9cfec12!2sKERUPUK%20RAMBAK%20ADI%20ASLI%20KHAS%20BOYOLALI!5e0!3m2!1sid!2sid!4v1718279000000!5m2!1sid!2sid" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; filter: grayscale(10%) contrast(90%); transition: filter 0.3s;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="group-hover:filter-none">
+                        </iframe>
+                    </div>
+                    <a href="https://maps.google.com/?q=KERUPUK+RAMBAK+ADI" target="_blank" class="mt-4 w-full block text-center py-2.5 bg-brand-nav/10 border border-brand-nav text-brand-nav text-sm font-medium rounded-lg hover:bg-brand-nav hover:text-white transition-colors">
+                        Buka di Google Maps
+                    </a>
+                </div>
+
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Kerupuk Rambak Adi — Asli Khas Boyolali. Semua hak dilindungi.</p>
+
+            <!-- Copyright -->
+            <div class="pt-8 border-t border-white/10 text-center flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-white/50">&copy; 2024 Kerupuk Rambak Adi — Asli Khas Boyolali. Semua hak dilindungi.</p>
+                <!-- Tombol WA Mengambang (Opsional di Footer) -->
+                <a href="https://wa.me/6281316390543" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-brand-green hover:text-brand-greenhover transition-colors">
+                    <i class="ph-fill ph-whatsapp-logo text-lg"></i> Chat Admin
+                </a>
             </div>
         </div>
     </footer>
-
-
-    <!-- ========== FLOATING WHATSAPP BUTTON ========== -->
-    <a href="https://wa.me/6281316390543?text=Halo%20Kerupuk%20Rambak%20Adi%2C%20saya%20ingin%20bertanya." target="_blank" rel="noopener noreferrer" class="wa-float" id="wa-float-btn" aria-label="Chat WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-    </a>
-
-
-    <!-- ========== TOAST NOTIFICATION ========== -->
-    <div class="toast" id="toast"></div>
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Scripts -->
     <script src="komponen.js"></script>
-
 </body>
 </html>
