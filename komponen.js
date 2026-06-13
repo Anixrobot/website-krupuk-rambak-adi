@@ -11,19 +11,28 @@ const WA_NUMBER = '6281316390543';
 const productsData = [
     {
         id: 'p1',
-        name: 'Kerupuk Rambak Kemasan Besar',
+        name: 'Kerupuk Rambak Kemasan 1kg',
         description: 'Kerupuk rambak sapi asli, renyah dan gurih. Cocok untuk lauk pauk.',
-        price: 'Rp 50.000',
-        image: 'assets/logo kerupuk rambak adi .png'
+        price: 'Rp 45.000',
+        image: 'assets/1kg.jpeg'
     },
     {
         id: 'p2',
-        name: 'Kerupuk Rambak Kemasan Sedang',
+        name: 'Kerupuk Rambak Kemasan 1/2kg',
         description: 'Kerupuk rambak kemasan sedang yang pas untuk ngemil santai.',
         price: 'Rp 25.000',
-        image: 'assets/logo kerupuk rambak adi .png'
+        image: 'assets/seperempat kg.jpeg'
+    },
+    {
+        id: 'p3',
+        name: 'Kerupuk Rambak Kemasan 1/4kg',
+        description: 'Kerupuk rambak kemasan kecil yang praktis untuk dibawa bepergian.',
+        price: 'Rp 15.000',
+        image: 'assets/setengah kg.jpeg'
     }
 ];
+
+
 
 // Data Ulasan: Silakan tambahkan atau ubah data ulasan di sini
 const reviewsData = [
