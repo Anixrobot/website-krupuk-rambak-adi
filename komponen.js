@@ -12,6 +12,13 @@ const WA_NUMBER = '6281316390543';
 // Data Produk: Silakan tambahkan atau ubah data produk di sini
 const productsData = [
     {
+        id: 'p7',
+        name: 'Krupuk Rambak Paket Nasi Kotak',
+        description: 'Kerupuk rambak sapi asli Boyolali yang renyah dan gurih, cocok sebagai pelengkap hidangan nasi kotak Anda.',
+        price: 'Rp 1.500/pcs',
+        image: 'assets/krupuk paket nasi kotak.jpeg'
+    },
+    {
         id: 'p5',
         name: 'Krupuk Rambak Kemasan 400gram',
         description: 'Ngemil renyah tanpa ribet! Kemasan ekonomis ini pas banget buat nemenin waktu santai, nugas, atau jadi pengganjal perut saat di jalan. Sekali gigit, gurih sapi aslinya bikin nggak mau berhenti ngunyah.',
@@ -52,7 +59,7 @@ const productsData = [
         description: 'Solusi hemat untuk kebutuhan besar! Kemasan 1 Ball (4 kg) ini adalah pilihan paling cuan buat kamu yang mau jual lagi (reseller), atau untuk sajian acara besar seperti hajatan, arisan, dan kumpul keluarga. Kualitas juara dengan harga grosir!',
         price: 'Rp 160.000',
         image: 'assets/satu ball 4kg.jpeg'
-    },
+    }
 ];
 
 // Data Ulasan: Silakan tambahkan atau ubah data ulasan di sini
